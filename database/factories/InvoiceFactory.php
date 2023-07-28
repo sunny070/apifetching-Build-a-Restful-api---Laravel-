@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Invoice;
 use App\Models\Customer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -10,6 +11,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class InvoiceFactory extends Factory
 {
+
+    protected $model =Invoice::class;
     /**
      * Define the model's default state.
      *
@@ -17,7 +20,7 @@ class InvoiceFactory extends Factory
      */
     public function definition(): array
     {
-        $status =$this->faker->randomElement('B','P','V');
+        $status =$this->faker->randomElement(['B','P','V']);
         return [
             'customer_id'=> Customer::factory(),
             'amount' =>$this->faker->numberBetween(100,20000),

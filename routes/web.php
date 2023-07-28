@@ -14,9 +14,9 @@ use App\Http\Controllers\PageController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::middleware([
     'auth:sanctum',
@@ -28,4 +28,4 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/', [PageController::class,'index'])->name('index');
+// Route::get('/', [PageController::class,'index'])->name('index');

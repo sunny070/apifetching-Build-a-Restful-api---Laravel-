@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Customer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class CustomerFactory extends Factory
 {
+    protected $model= Customer::class;
     /**
      * Define the model's default state.
      *
@@ -16,8 +18,8 @@ class CustomerFactory extends Factory
      */
     public function definition(): array
     {
-        $type = $this->faker->randomElement('I','B');
-        $name =$type == 'I'? $this->faker->name() : $this->faker->company();
+        $type = $this->faker->randomElement(['I','B']);
+        $name = $type == 'I'? $this->faker->name() : $this->faker->company();
         return [
             'name' => $name,
             'type' => $type,

@@ -4,4 +4,8 @@
 
 
 <!-- Fetching an api for customer and user -->
-<!-- chapter 1 and 2 Completed -->
+<!-- chapter 1 and 2 Completed --> php artisan make:model Customer --all
+ <!-- Creates the model factory the seeder controller and policy -->
+<!-- chapter -3 : Providing data
+lessom -1 :versioning and defuning route -->
+lesson 2 :Transforming database data into json
