@@ -8,4 +8,5 @@
  <!-- Creates the model factory the seeder controller and policy -->
 <!-- chapter -3 : Providing data
 lessom -1 :versioning and defuning route -->
-lesson 2 :Transforming database data into json
+<!-- lesson 2 :Transforming database data into json -->
+Using resource(php artisan make:resource v1/CustomerResource)

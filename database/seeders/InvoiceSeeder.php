@@ -12,6 +12,6 @@ class InvoiceSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        
     }
 }
