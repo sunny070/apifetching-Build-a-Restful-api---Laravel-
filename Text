@@ -10,3 +10,6 @@
 lessom -1 :versioning and defuning route -->
 <!-- lesson 2 :Transforming database data into json -->
 Using resource(php artisan make:resource v1/CustomerResource)
+
+Chapter 3 Providing Data
+Lesson 3 Filtering data

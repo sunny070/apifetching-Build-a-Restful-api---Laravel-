@@ -18,7 +18,11 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return new CustomerCollection(Customer::paginate());
+        //we used resource to show some of the data as in pagination
+        $data = new CustomerCollection(Customer::paginate());
+        return view('layouts.api',compact('data'));
+
+        // return new CustomerCollection(Customer::paginate());
     }
 
     /**
