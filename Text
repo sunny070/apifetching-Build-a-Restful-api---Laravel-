@@ -13,3 +13,5 @@ Using resource(php artisan make:resource v1/CustomerResource)
 
 Chapter 3 Providing Data
 Lesson 3 Filtering data
+*customer and Invoices
+Lesson 4 Filtering More Data

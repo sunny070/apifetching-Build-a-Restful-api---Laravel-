@@ -2,27 +2,35 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Filters\V1\CustomerFilter;
 use App\Models\Customer;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
 use App\Http\Controllers\Controller;
 use App\http\Resources\V1\CustomerResource;
 use App\http\Resources\V1\CustomerCollection;
-
-
+use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //we used resource to show some of the data as in pagination
-        $data = new CustomerCollection(Customer::paginate());
-        return view('layouts.api',compact('data'));
+        // $data = new CustomerCollection(Customer::paginate());
+        // return view('dashboard.show.index',compact('data'));
 
-        // return new CustomerCollection(Customer::paginate());
+        $filter= new CustomerFilter();
+        $qeuryItems = $filter->transform($request); //[['column', 'operator','value']]
+        if(count($qeuryItems)== 0){
+            return new CustomerCollection(Customer::paginate());
+
+        }else{
+            return new CustomerCollection(Customer::where($qeuryItems)->paginate());
+
+        }
     }
 
     /**
